@@ -1,0 +1,14 @@
+services:
+  home-budget:
+    image: postgres:15
+    container_name: home-budget
+    environment:
+      POSTGRES_DB: home-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5450:5432"
+    volumes:
+      - home-budget_data:/var/lib/postgresql
+volumes:
+  home-budget_data:

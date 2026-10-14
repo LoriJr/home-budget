@@ -3,3 +3,13 @@ server:
 spring:
   application:
     name: home-budget
+
+  datasource:
+    url: jdbc:postgresql://localhost:5450/home-db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+
