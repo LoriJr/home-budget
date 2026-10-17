@@ -5,10 +5,10 @@ spring:
     name: home-budget
 
   datasource:
-    url: jdbc:postgresql://localhost:5450/home-db
+    url: jdbc:postgresql://localhost:5450/${POSTGRES_DB}
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: admin
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
