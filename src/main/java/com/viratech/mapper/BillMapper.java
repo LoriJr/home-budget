@@ -5,6 +5,9 @@ import com.viratech.dto.CreateBillResponse;
 import com.viratech.models.Bill;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class BillMapper {
 
@@ -29,6 +32,12 @@ public class BillMapper {
                 .dueDate(request.dueDate())
                 .billCategory(request.category())
                 .build();
+    }
+
+    public List<CreateBillResponse> billResponseList(List<Bill> bills){
+        return bills.stream()
+                .map(this::createBillResponseDto).toList();
+
     }
 
 }
